@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   put '/articles/:id', to: 'articles#update'
   delete '/articles/:id', to: 'articles#destroy'
 
+  post '/articles/:article_id/comments', to: 'comments#create', as: 'article_comments'
+  delete 'articles/:article_id/comments/:id', to: 'comments#destroy', as: 'article_comment'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
